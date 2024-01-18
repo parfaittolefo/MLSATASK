@@ -1,0 +1,691 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Parfait TOLEFO </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4f0af603-d274-4c68-b4b3-90ea6bfa1dab" class="page serif"><header><img class="page-cover-image" src="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/image%201.jpeg" style="object-position:center 21.189999999999998%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/WhatsApp_Image_2023-10-22_at_20.03.34.jpeg"/></div><h1 class="page-title">Parfait TOLEFO </h1><p class="page-description"></p></header><div class="page-body"><hr id="1388cd97-3f99-412c-93ca-f1590b826c97"/><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="fdaee1da-8b3d-4439-83ef-0ad02b41bd06"><div style="font-size:1.5em"><span class="icon">🧑🏻‍🎨</span></div><div style="width:100%">System Admin / Pentester Jr / SOC Analyst / CTF Player / Python Scripting  / MLSA</div></figure><h1 id="d28a971f-d5ed-4159-8451-e4633edf2077" class="block-color-default"> 👋 About Me</h1><p id="f0c126bf-51a8-4837-b616-5aa8fad0e99e" class=""><strong>   Ensure increased security of information systems</strong></p><div id="66053aa7-fe03-4836-b817-fc513ff9a00f" class="column-list"><div id="2d3573d0-e88a-4708-ba94-ed250ada3ec5" style="width:18.75%" class="column"><figure id="b71de707-89b6-4a7e-9538-eec31389611f" class="image"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/cyber.jpg"><img style="width:640px" src="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/cyber.jpg"/></a></figure><hr id="d022271d-7951-4e21-8ffd-1813ebf6114a"/></div><div id="21b7c310-f7cb-4a7f-92cf-ad8f826b2992" style="width:93.75%" class="column"><p id="e597aa62-968c-4f78-91fa-65abcd8ed8a0" class="block-color-default">My name is <strong>Parfait TOLEFO</strong>, a young person passionate about cybersecurity and information systems. I explore various aspects of this field and seize every learning opportunity that comes my way. I demonstrate my interest in cybersecurity and information systems through my participation in competitions such as the CTF, where I have obtained encouraging results. I am constantly willing to learn new techniques and methods to improve my performance and value in this field. My main objective is to ensure the protection of information systems using available means and technologies. I am also available to join any team or work environment that will allow me to put my knowledge into practice and leverage my skills.</p><p id="6fcc7d7b-e7d2-4269-8986-87129405bd31" class="">
+</p></div></div><div id="355aace4-e9b6-4b27-8cb4-5959c2864f20" class="column-list"><div id="1da591d4-46f0-4abf-aa22-88c5582668ca" style="width:87.5%" class="column"><h1 id="8cc692b2-fc68-429e-9933-de53605a1453" class="">☎️ Contact</h1><p id="37fb0acd-cf84-466b-a54b-2e00a5b3b616" class="">✉️ <strong>Email</strong></p><p id="b8f7c529-3d1f-4798-8916-03206789a7db" class="">parfaittolefo23@gmail.com</p><p id="990f2400-2bc7-494a-bdc2-709acc1b9740" class="block-color-teal">📞 <strong>Phone</strong> </p><p id="fff5aff8-1bcd-4f0e-a5da-c800d2a20a98" class="">(+229) 52422809</p><p id="59c69e43-9fc0-444e-82c2-8d3f4d1cb3ae" class="block-color-teal">📱 <strong>Whatsapp</strong></p><p id="102943ef-5e98-46a2-a9de-2e30e86ebb40" class=""><a href="https://wa.me/qr/CSVAE6US5FYEG1">(+229) 61474698  </a></p><p id="3961f5e0-d12a-47f6-af05-f802b4bd1f5d" class=""> Scan the QR Code</p><figure id="2da6e158-eb9f-4c66-831b-75c434faa502" class="image" style="text-align:left"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/WhatsApp_Image_2023-09-19_at_16.28.28.jpeg"><img style="width:144px" src="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/WhatsApp_Image_2023-09-19_at_16.28.28.jpeg"/></a><figcaption>Scan  to connect with me on whatsapp</figcaption></figure></div><div id="41c60278-b57f-4e90-adcc-db982870a190" style="width:52.40384615384617%" class="column"><h1 id="e49b2094-4f41-4713-8b9f-b9be0bc7da61" class="">🌐 Website</h1><p id="3ed1fbda-17b8-464e-810f-7ab9c755f6b1" class="">💻 TensorUnit<br/><br/><a href="https://www.tensorunit.com/">TensorUnit.</a>com</p><p id="04a2d6ca-7a68-48c9-aef9-54f1c4fe7d98" class="">💼 <strong>Linkedin</strong><br/><br/><a href="https://www.linkedin.com/in/tlf-parfait/">Parfait TOLEFO</a></p><p id="68e67f9d-d04e-456e-a8f9-c167ae4c7bcf" class="">📚 Blog &amp; Tutoriels<br/><br/><a href="https://www.notion.so/Blog-Tutoriels-5b23e78f4cb9461abc1a8d55364372c6?pvs=21">Blog &amp; Tutoriels</a></p><p id="eab66a77-3e1b-4692-ad85-afceb99ddbca" class=""><strong>📝Get my CV here 👇🏾</strong></p><figure id="8c33f237-3358-457f-992b-b81f7176b875"><div class="source"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/CV_TOLEFO_Parfait.en.pdf">CV_TOLEFO_Parfait.en.pdf</a></div><figcaption><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab.html">Download my CV </a></figcaption></figure><p id="f94daba4-503a-4585-a431-68731dbd894c" class="">
+</p></div></div><div id="a44d5898-b0ea-454d-b57c-f42b853497d9" class="column-list"><div id="8efd32ea-3e22-4c79-96a2-1d4b73aff869" style="width:37.5%" class="column"><h2 id="31acee1c-0c8c-470b-a827-1101b9b5ff10" class="">✨ Skills</h2><p id="a11b36e0-ac16-44a9-8682-ab383b4531a1" class=""><strong>◈ Network and system administration</strong></p><p id="d931e0c8-35c8-4dee-9501-5b4682c769cf" class=""><strong>◈ System and Network Monitoring</strong></p><p id="2fff9a16-2ecb-45b0-82a3-45581f19c05f" class=""><strong>◈ Penetration Testing</strong></p><p id="9aa3876b-56e0-41d8-991f-394cbeea9657" class=""><strong>◈ Vulnerability Patching</strong></p><p id="79bdf180-c86e-4d6a-abbd-739c7173d13a" class=""><strong>◈ Incident Response</strong></p><p id="34c3423a-f7f9-45d4-ab67-147a9659fb5f" class=""><strong>◈ Cloud Management</strong></p></div><div id="abb5a24d-35c4-4680-8bda-3d8f6e1e961d" style="width:41.66666666666666%" class="column"><h3 id="b34fb3d8-44ae-4165-b3b7-c668bed5059b" class="">🌟 Languages</h3><p id="9ce47429-cd59-4b16-92a0-15c6e2112a6f" class="">◈ French C1</p><p id="86ed13b6-43b9-4fba-8bc5-e021e068f826" class="">◈ English B2</p><p id="9a549ee5-d96c-45a2-acd0-8bf89eecafd7" class="">
+</p></div></div><hr id="bc3469c5-278b-44d7-9b4c-416cfc9c6fc5"/><h1 id="41b809f0-fab1-43e1-ae80-648db9edc1a4" class="">🎓 Education</h1><h2 id="910903a5-0dfd-4380-9a07-82c1d725a07e" class="">2020-2023 : University of Abomey-Calavi-Benin</h2><hr id="e2047eb1-a809-4606-abac-8011f078f362"/><ul id="70b491c7-e5b9-4b40-a882-8be63e2a3f36" class="bulleted-list"><li style="list-style-type:disc">Mastercard Foundation Scholar at the University of Abomey-Calavi</li></ul><ul id="9191bf5b-c505-4c7e-a6f2-4365f5d8c92f" class="bulleted-list"><li style="list-style-type:disc">Professional Bachelor&#x27;s Degree in Cybersecurity at Institut de Formation et de Recherche en<br/>Informatique<br/></li></ul><h2 id="951cdd38-3224-4aeb-8d21-5edb166a0b53" class="">2020 : General Education College 1 of Abomey Calavi - Benin</h2><hr id="02d7c15f-fe6b-423b-98a5-04c702db1a80"/><ul id="3a31f18a-f0f9-4b64-9bbf-9e908b090c44" class="bulleted-list"><li style="list-style-type:disc">Baccalaureate D</li></ul><h2 id="62575d9e-6b00-49a6-8f1f-661d01835556" class="">2023 : Edureka</h2><hr id="601d8439-961a-44f4-9f4c-8e2d5268c8f7"/><ul id="98cae103-7ae1-437b-8ae2-1ac3d76e4658" class="bulleted-list"><li style="list-style-type:disc">Operating System and Networking Fundamentals</li></ul><ul id="1242a0c3-93ad-43a5-bcff-4c1a127ac0e5" class="bulleted-list"><li style="list-style-type:disc">Cryptography &amp; Application Security</li></ul><ul id="34601e1d-ab25-4f85-a821-beb34e279835" class="bulleted-list"><li style="list-style-type:disc">Cyber Security Tools</li></ul><ul id="3b789a49-e7d6-4e2e-a387-1d7c5e7d7b03" class="bulleted-list"><li style="list-style-type:disc">Web Application Hacking</li></ul><h1 id="cbec73e9-8437-4299-bf8b-56ce084db2b4" class="">2023: Ingressive For Good Cyber Security</h1><hr id="369868c6-bc2b-4842-bdaa-00bd76330d91"/><ul id="2f2f3da7-7e4c-4622-b19d-4328d5442d0d" class="bulleted-list"><li style="list-style-type:disc">Introduction to Cybersecurity</li></ul><ul id="950231a3-8634-41d1-a94d-4b53ec9a589a" class="bulleted-list"><li style="list-style-type:disc">Cybersecurity Essentials</li></ul><ul id="293f6208-30c5-4c2c-a9fc-cac69bbd2f87" class="bulleted-list"><li style="list-style-type:disc">Endpoint Security</li></ul><ul id="b87e47ca-ee58-4a70-9bae-8a26d30bd1da" class="bulleted-list"><li style="list-style-type:disc">Cloud Security</li></ul><h1 id="b76fb9f3-7cc5-4e28-a527-f5d5ca408795" class="">2023: <strong><a href="https://lanation.bj/societe/programme-graine-de-futur-de-huawei-technologies-la-neuvieme-promotion-prete-a-faire-valoir-ses-competences">Huawei Seeds For The Future Program</a></strong></h1><hr id="ab97a929-fa42-45a9-b1ce-9e9e62a03dd5"/><ul id="7ef65279-dd57-4d0d-9cc3-5f77479b4755" class="bulleted-list"><li style="list-style-type:disc">AI Fundamentals and Applications</li></ul><ul id="a1794301-0477-468d-a1a8-5f1f1cf71f92" class="bulleted-list"><li style="list-style-type:disc">Digital Power</li></ul><ul id="324a0396-e9cc-4264-a5a4-808909933804" class="bulleted-list"><li style="list-style-type:disc">Huawei 5G Technologie</li></ul><ul id="62de0a72-07d2-4827-a05c-86cd27ebbc4c" class="bulleted-list"><li style="list-style-type:disc">Cloud Computing</li></ul><p id="24cbee89-2667-4252-8b84-d863891009fd" class="">
+</p><h1 id="f134ae54-dd56-44ae-8256-2c96292ec736" class="">2023: <a href="https://dnsforum.bj/dnsathon/">DNSathon 2023</a></h1><hr id="ddb0eff0-a4af-4c9e-9137-9518cf807a54"/><ul id="28c03efd-4137-4f10-a3dd-28898692d568" class="bulleted-list"><li style="list-style-type:disc">DNS Overview</li></ul><ul id="1943dc6e-4f2c-43b8-91dc-b6896e84bb6d" class="bulleted-list"><li style="list-style-type:disc">DNS Implementation</li></ul><ul id="4c4f5dbf-34d9-4405-aecc-a35488a6b3d3" class="bulleted-list"><li style="list-style-type:disc">DNS Security with Kindns Framework</li></ul><h1 id="78784a34-6eaa-4c56-855d-fd1d235e123f" class="">💼 Experiences</h1><hr id="ea6cba21-9efb-4907-a136-cdbf275a45ee"/><h2 id="0d674e83-504a-408b-a583-d3f7db8e3546" class="">Since 2022: <a href="https://www.tensorunit.com/">TensorUnit</a></h2><hr id="5bb55930-2106-4c16-940f-a623a900dca2"/><ul id="1b41e9dc-4051-4122-be6f-cbfc6eb847d3" class="bulleted-list"><li style="list-style-type:disc">Cloud Manager</li></ul><ul id="c9fc1426-d85d-42d7-b81d-c69b14e58845" class="bulleted-list"><li style="list-style-type:disc">CISO</li></ul><h2 id="bcde3f6e-7bea-4bb1-a16c-56c1177b5134" class="">2022-2023: Huawei Technologies Benin sa</h2><hr id="58b1562f-6a6b-4204-b638-68abb689bcee"/><ul id="cc18ea1b-a169-40de-be2b-99c27237235e" class="bulleted-list"><li style="list-style-type:disc">Linux System Administration</li></ul><ul id="a9fdacbb-4046-486e-8625-bb26784fe91a" class="bulleted-list"><li style="list-style-type:disc">Network monitoring</li></ul><ul id="d6adecc4-e196-4b95-8094-ded49d7e41cd" class="bulleted-list"><li style="list-style-type:disc">Jr SOC Analyst </li></ul><ul id="8f13cf73-7eaf-4bd1-9171-4928b72edbc8" class="bulleted-list"><li style="list-style-type:disc">Incident response</li></ul><ul id="419b383c-4e42-45c0-b5bc-03d3fa427093" class="bulleted-list"><li style="list-style-type:disc">Minimum configuration of fintech solution (Mobile Money)</li></ul><h1 id="d6964f2e-4998-4586-ae85-2e23a9cc7a54" class="">🏆 Honors &amp; Awards</h1><hr id="d6c174bc-ebd9-4c16-95b6-bade3fadaf29"/><div id="39fdebcb-41dd-481d-8fbb-79888869779e" class="column-list"><div id="b4169c95-46e2-4c6d-954c-4511508c1ec7" style="width:50%" class="column"><blockquote id="21cd5983-10ae-46fd-9b8a-7261dddc7dd8" class="">🥇 <strong>1st Prize 24HACKBJ 2023</strong><hr id="7d76de0f-9599-409e-9ad3-f3c44d312c97"/><p id="cefd5f85-8975-4c12-adee-f0e8eee82d5b" class="">April 2023 <strong>· CTF Competition</strong></p><ul id="8332f367-fffc-4858-a482-0879fe13b83c" class="toggle"><li><details open=""><summary>Description</summary><p id="c4f6f9f1-1bb7-4ab1-9395-d54016501b18" class=""><strong>24HACKBJ</strong> is a hacking competition called Capture The Flag (CTF) organized by EMES Sarl for Computer Security Students in Benin in 2023. With the efforts of my team and me, we won first prize.</p><figure id="384763c8-3f1f-4756-831a-08944a793629" class="image"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/photo_5787555409198956746_y.jpg"><img style="width:816px" src="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/photo_5787555409198956746_y.jpg"/></a></figure></details></li></ul></blockquote><p id="9ade6b4a-e254-4297-9ba2-25585c909be1" class="">
+</p><blockquote id="04472514-48e1-4620-8f96-73ca18f48396" class=""><strong>🥉 3rd Prize UNODC Forensic CTF 2022</strong><hr id="c2f2f4ba-6b10-42f1-bfa7-a69ca3867306"/><p id="b042eb50-6af6-4fc9-a56f-a106da6ab796" class="">May 2022 <strong>· CTF Competition</strong></p><ul id="5ff08730-2674-46b5-97f4-5413710610f0" class="toggle"><li><details open=""><summary>Description</summary><p id="2091fa48-7a82-4902-9a7b-af2ed04c9fce" class=""><strong> UNODC Forensic CTF  </strong>is a competition organized by UNODC for africa in<strong> Digital Forensics</strong>. Digital Forensics is the process of identifying, preserving, analysing and documenting digital evidence to be presented in a court of law and more than 60% of people in Africa access the internet through their mobile phones. This means that most digital forensics probes on the continent are done on mobile devices. It was only right that we organize the competition to meet the realities on the ground. With the efforts of my team and me, we won third prize.</p></details></li></ul></blockquote><p id="1df49c55-5c63-4842-86d7-9d695aac56a3" class="">
+</p><blockquote id="132e53f2-083d-4582-8014-4b89c74f7692" class="">🥈 <strong>2nd Prize ECOWAS CTF 2023</strong><hr id="4f03e9ba-0c03-45c2-acd2-9ac54c7ac427"/><p id="88dedccf-a133-486c-a623-b27ca61a7bd2" class="">October 2023 <strong>· CTF Competition</strong></p><ul id="e31e82a6-df73-4b01-a9f1-5f51eb01b386" class="toggle"><li><details open=""><summary>Description</summary><p id="83e98124-3069-473a-8341-ec8a76676574" class="">The Regional Hackathon is an initiative part of the wider ECOWAS Cybersecurity Agenda to address cybersecurity and cybercrime challenges in West Africa. It aims to promote inclusivity and regional collaboration in the fight against cybercrime while focusing on youth engagement, skill development, talent identification, and talent retention in the region.</p><figure id="f9db43f0-4517-4837-91cd-627ee81dbd36" class="image"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/image.jpeg"><img style="width:1600px" src="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/image.jpeg"/></a></figure></details></li></ul></blockquote><p id="9a36e87a-ec2c-4a64-9cb1-a3336af79531" class="">
+</p><blockquote id="e6bd2e7e-1d17-497e-b1ee-501607ac4ade" class=""><strong>Huawei SFTF 2023 prize</strong><hr id="51383f5b-e296-4bf5-8e9c-7e94a5ab01f3"/><p id="aa358f02-f30f-4e8b-8076-e3a9e098549d" class="">November 2023 <strong>· Huawei Technologies</strong></p><ul id="bfd836d4-ec45-4484-a0bb-41ab06a5c3ef" class="toggle"><li><details open=""><summary>Description</summary><p id="ec0ddb84-1726-456a-a7dd-4f70daff136b" class="">Seeds for the Future is Huawei&#x27;s flagship CSR program at the corporate level. By selecting young talents from around the world to participate in short-term trainings, global competitions and ongoing alumni activities centered around digital technology, it provides them with an important platform to understand industry innovation, experience cross-cultural exchanges, and cultivate an entrepreneurial spirit. The program embraces diversity of nationality and inclusivity as its core values, and has committed to a participation rate of at least one-third for female students.</p><p id="3851181f-82df-4c3f-9079-a7751c155de5" class="">
+</p><figure id="cd61744c-75d6-4536-bc23-2d625ab02190" class="image"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/IMG_5367.jpeg"><img style="width:1795px" src="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/IMG_5367.jpeg"/></a><figcaption>SFTP 2023 Prize </figcaption></figure></details></li></ul></blockquote><p id="f68b44e2-d111-49b4-9e42-1d12bdf98cd9" class="">
+</p></div><div id="fec00688-914a-42d8-acc8-75bf9b08f452" style="width:50.00000000000004%" class="column"><blockquote id="d0cfc1a8-b1a4-4c0c-a3f2-25601c523792" class="">🥇 <strong>1st Prize JINF CTF 2023</strong><hr id="4c59c2e2-a03b-4692-aa37-dac8f4447f6d"/><p id="8fdbbdeb-87c6-4048-9cf9-aad89ecce9c8" class="">March 2023 <strong>· CTF Competition</strong></p><ul id="6c2213aa-8743-4c63-9b45-d68db3dfd2a6" class="toggle"><li><details open=""><summary>Description</summary><p id="62e73a42-872b-49c3-8ade-18f773e1bb46" class=""><strong>JINF CTF</strong> is a hacking competition called Capture The Flag (CTF) organized by IFRI for computer security students in Benin in 2023 during the computer science student festival called JINF. With the efforts of my team and me, we won first prize.</p><p id="a26d3ebe-0c24-465f-96d9-b8bc3bc7fc24" class="">
+</p></details></li></ul></blockquote><p id="f12d5dee-2f8e-4146-95ea-d89a82993d04" class="">
+</p><blockquote id="8bb255df-2b46-479a-811b-526bf2964b78" class="">🏅 <strong>TOP 10 HUAWEI ICT COMPETITION 2021</strong><hr id="023ec8ae-be3d-4820-98aa-a44fbbbed36f"/><p id="500e6101-1718-48fc-a349-3ca5894090e4" class="">Nov 2021 <strong><strong>· Network-DataCom</strong></strong></p><ul id="0bc40df9-1126-46e6-9f8c-fb6769aba2b0" class="toggle"><li><details open=""><summary>Description</summary><p id="ee324885-dd5e-49a2-b7c9-292dfb3a9d42" class="">The Huawei ICT Competition is intended for students in Huawei ICT academies and those in higher education institutions that are willing to join the ICT Academy worldwide. Through this competition, Huawei aims to provide students with a platform to compete healthily and exchange ideas, thus enhancing their ICT knowledge and practical skills as well as increasing their ability to innovate by using new technologies and platforms.</p><figure id="22bad9e4-f5c8-4f23-b38f-04fcb8563d98" class="image"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/certif.png"><img style="width:816px" src="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/certif.png"/></a></figure><p id="6619ec3c-67cc-41cd-8c74-1bc935c14c79" class="">
+</p></details></li></ul></blockquote><p id="7c5b094a-0038-4ae5-ab7e-b485f7aac471" class="">
+</p><blockquote id="a35b0e5f-7171-49f6-a202-cb5a9f3e5aeb" class="">🏅 <strong>5th HackerLab 2023</strong><hr id="cebbde8d-a714-4a24-a471-c7f01aca4da9"/><p id="0be1299f-ef6e-490b-83db-9036b72825ab" class="">October 2023 <strong>· CTF Competition</strong></p><ul id="0bb88fbe-f71b-4de2-b8a6-d96289b53cba" class="toggle"><li><details open=""><summary>Description</summary><p id="f96b48c1-fde2-4af1-9684-7ca6560e2db9" class="">Indeed, the Hackerlab aims to offer a unique opportunity for participants to test their IT security skills in a stimulating and realistic environment, to arouse the interest of young people and to identify future talents in cybersecurity.</p><figure id="1f0d98f6-cd99-4aa1-a365-856c682f5b1a" class="image"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/WhatsApp_Image_2023-10-23_at_20.42.49.jpeg"><img style="width:1080px" src="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/WhatsApp_Image_2023-10-23_at_20.42.49.jpeg"/></a></figure></details></li></ul></blockquote><p id="69204c61-1a93-492b-a7a8-93b0ce086f99" class="">
+</p><blockquote id="18a7bb66-4ce3-4a70-9017-113c9a49a21f" class=""><strong>DNSathon 2023 Team lead</strong><hr id="36e2bc03-551d-4249-bf10-1141af73a14b"/><p id="248d8859-233c-4789-b9a9-53293a7ca356" class="">Decemnber 2023 <strong>· DNS  Hackathon</strong></p><ul id="ea6d8766-4283-4c6b-87ca-dc1437e0f49f" class="toggle"><li><details open=""><summary>Description</summary><p id="e5f05d30-8e11-41a1-acd9-09728157a4e0" class="">The DNSathon (DNS Hackathon) is the collaborative hackathon organized by the Benin DNS Forum and will involve various profiles.</p><p id="28e6cf38-9049-4a29-b61f-fd9a6819e653" class="">It was introduced into the Benin DNS Forum program since the 2017 edition following the interest shown by the community to learn and understand the technical implementation of DNS hierarchy.</p><p id="e49043f4-5018-44a2-9774-8e92842a2b6d" class="">This year, the DNSathon will take place on Thursday, December 7, 2023 in Cotonou. The focus will be on concrete challenges related to implementing best practices using the KINDNS platform.</p><figure id="23e59db1-61a9-43fe-8ac8-3d56647df6d3" class="image"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/dnsathon.jpeg"><img style="width:2560px" src="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/dnsathon.jpeg"/></a></figure></details></li></ul></blockquote></div></div><h1 id="cf17b404-0e08-4103-a8d5-7e0bcff66668" class="">👥 Organizations</h1><hr id="1434c8d8-fc7b-42d6-ae43-e782952cae3a"/><h2 id="142b9b75-66dd-4eff-88d1-0947d834a927" class="">🧑🏻‍🎓N4t10n CTF  Team Lead</h2><hr id="15244956-1c28-4bcb-8dde-1b13fe8e0afc"/><p id="3e7be53d-477b-4fc7-9395-d1feb74a2fff" class="">Since 2022 <strong><strong>· CTF Team </strong></strong></p><p id="48621e37-0afb-4ffc-a62e-b5d1ea3cdffe" class="">N4t10n is a team of cybersecurity enthusiasts. It is made up of 4 members including myself. I have been at the head of this team since its birth in 2022</p><h2 id="2a112cc7-9162-4a79-a894-c200176cfff8" class="">👮🏻‍♂️<strong> </strong><strong><a href="https://bjwhitehats.bj/">BjWhiteHats</a></strong></h2><hr id="3e91110a-be43-47f6-8483-945c453def9a"/><p id="b75e623f-9dda-40f9-bd41-64dba455cbee" class="">I am active member of <strong><a href="https://bjwhitehats.bj/">BjWhiteHats</a></strong>   group.  <strong>BjWhiteHats</strong> is the association of ethical hackers in Benin. This is the Beninese community of IT security enthusiasts!</p><h2 id="2efb44e2-1549-499a-8f1e-401bc1ca9e45" class="">👮🏻‍♂️ Community of Mastercard Foundation Scholars at the University of Abomey-Calavi</h2><ul id="89c9964b-8002-418d-b413-c1403461fd72" class="bulleted-list"><li style="list-style-type:disc">Organization of training and coaching in online ethical hacking</li></ul><ul id="a53a7048-6ca0-4191-aa37-742d99551b75" class="bulleted-list"><li style="list-style-type:disc">Initiation of students to the use of computer tools </li></ul><ul id="6bafb031-a439-4fe2-bb91-3672e5a263ad" class="bulleted-list"><li style="list-style-type:disc">Organization of tutorials for students in exam classes<br/><br/></li></ul><h1 id="4653384d-c240-4a47-87f9-7ebb4f4a9ebc" class="">📜Professional Certificate</h1><hr id="07ced101-01bd-497d-867c-2bf1e759493c"/><div id="1e7dd303-0da3-4932-9c9a-7459447ad8f6" class="collection-content"><h4 class="collection-title">Selected Certificate (1)</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Name</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Credential ID</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Date Issued</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>From</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>Verify</th></tr></thead><tbody><tr id="085c4606-887d-4efb-afd6-e82b924da992"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/AppSec%20PRACTITIONER(CAP)%20085c4606887d4efbafd6e82b924da992.html"><span class="icon">🌟</span>AppSec PRACTITIONER(CAP)</a></td><td class="cell-DgQb"> 7650912</td><td class="cell-KwK;"><time>@18/07/2023</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-yellow">TheSecOpsGroup</span></td><td class="cell-Az~n"><a href="https://candidate.speedexam.net/certificate.aspx?SSTATE=am4131EniU8ntjp4bO5mXY2x6hPD8tHSc89XY32w9LOzGQIN5chc8qyHuXgXvJ060cZoEWu0XpKH0HbRY2cKEMT3qAyxi/2YQyybCuORpZc=" class="url-value">https://candidate.speedexam.net/certificate.aspx?SSTATE=am4131EniU8ntjp4bO5mXY2x6hPD8tHSc89XY32w9LOzGQIN5chc8qyHuXgXvJ060cZoEWu0XpKH0HbRY2cKEMT3qAyxi/2YQyybCuORpZc=</a></td></tr><tr id="107620e8-98d5-49e2-bd07-0716b2139a32"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/Microsoft%20Certified%20Azure%20Fundamentals%20107620e898d549e2bd070716b2139a32.html"><span class="icon">🌟</span>Microsoft Certified: Azure Fundamentals</a></td><td class="cell-DgQb">03Z412-5916F9</td><td class="cell-KwK;"><time>@13/06/2023</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-green">Microsoft</span></td><td class="cell-Az~n"><a href="https://learn.microsoft.com/api/credentials/share/fr-fr/ParfaitTOLEFO-9386/3F21544E7E2D275A?sharingId=867CF7E3A7364CB0" class="url-value">https://learn.microsoft.com/api/credentials/share/fr-fr/ParfaitTOLEFO-9386/3F21544E7E2D275A?sharingId=867CF7E3A7364CB0</a></td></tr><tr id="c18b580b-010a-44fb-bed3-fa96a5206458"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/Oracle%20Certified%20Foundations%20Associate%20c18b580b010a44fbbed3fa96a5206458.html"><span class="icon">🌟</span>Oracle Certified Foundations Associate</a></td><td class="cell-DgQb">302864619OCIF2023CA</td><td class="cell-KwK;"><time>@19/06/2023</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-orange">Oracle</span></td><td class="cell-Az~n"><a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=93539923F9F75410188FF3034C16D6A9DD2B370A96284762B567A4D5141A0546" class="url-value">https://catalog-education.oracle.com/pls/certview/sharebadge?id=93539923F9F75410188FF3034C16D6A9DD2B370A96284762B567A4D5141A0546</a></td></tr><tr id="6c177d24-734e-43ca-b493-bbb3c7192008"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/Jr%20Penetration%20Tester%206c177d24734e43cab493bbb3c7192008.html"><span class="icon">🌟</span>Jr Penetration Tester</a></td><td class="cell-DgQb">THM-VKY5HUKL6C</td><td class="cell-KwK;"><time>@05/03/2022</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-blue">TryHackMe</span></td><td class="cell-Az~n"><a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-VKY5HUKL6C.png" class="url-value">https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-VKY5HUKL6C.png</a></td></tr><tr id="c658553f-ca9c-485a-bdff-9f7c37e175c9"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/Advent%20Of%20Cyber%202022%20c658553fca9c485abdff9f7c37e175c9.html"><span class="icon">🌟</span>Advent Of Cyber 2022</a></td><td class="cell-DgQb">THM-LGW1WDKWM1</td><td class="cell-KwK;"><time>@25/12/2022</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-blue">TryHackMe</span></td><td class="cell-Az~n"></td></tr><tr id="a58b7788-d00c-4e8f-812c-1931a75a5913"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/Huawei%20ICT%202021%20a58b7788d00c4e8f812c1931a75a5913.html"><span class="icon">🌟</span>Huawei ICT 2021</a></td><td class="cell-DgQb"></td><td class="cell-KwK;"><time>@11/11/2021</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-purple">Huawei</span></td><td class="cell-Az~n"></td></tr><tr id="83fa86ff-77d5-4b41-a2d5-6ec011f21242"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/Certification%20Google%20en%20Marketing%20Nume%CC%81rique%2083fa86ff77d54b41a2d56ec011f21242.html"><span class="icon">🌟</span>Certification Google en Marketing Numérique</a></td><td class="cell-DgQb">FY5 YYS UPS</td><td class="cell-KwK;"><time>@11/11/2021</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-brown">GOOGLE</span></td><td class="cell-Az~n"><a href="https://learndigital.withgoogle.com/lateliernumerique/course/digital-marketing/certification/post-assessment" class="url-value">https://learndigital.withgoogle.com/lateliernumerique/course/digital-marketing/certification/post-assessment</a></td></tr><tr id="bc8518dd-00ce-46f1-ae2c-aa114106d607"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/Logpoint%20SIEM%20bc8518dd00ce46f1ae2caa114106d607.html"><span class="icon">🌟</span>Logpoint SIEM</a></td><td class="cell-DgQb">N4vZ1xVAJkWm</td><td class="cell-KwK;"><time>@18/12/2022</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-default">Alphorm</span></td><td class="cell-Az~n"><a href="https://www.alphorm.com/Attestation/N4vZ1xVAJkWm" class="url-value">https://www.alphorm.com/Attestation/N4vZ1xVAJkWm</a></td></tr><tr id="fd2d4067-956a-4fe3-9175-7702d0aab964"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/Cyber%20Security%20and%20Ethical%20Hacking%20Internship%20Prog%20fd2d4067956a4fe391757702d0aab964.html"><span class="icon">🌟</span>Cyber Security and Ethical Hacking Internship Program</a></td><td class="cell-DgQb">B8F5V4K74</td><td class="cell-KwK;"><time>@08/08/2022</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-gray">Edureka</span></td><td class="cell-Az~n"><a href="https://www.edureka.co/certificates/mycertificate/f6335a3fe74baf2e3238eebe61a69f63" class="url-value">https://www.edureka.co/certificates/mycertificate/f6335a3fe74baf2e3238eebe61a69f63</a></td></tr><tr id="7a5f4db9-bbb2-427a-9635-ec7eb06da6b0"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/CCNAv7%20Introduction%20to%20Networks%207a5f4db9bbb2427a9635ec7eb06da6b0.html"><span class="icon">🌟</span>CCNAv7: Introduction to Networks</a></td><td class="cell-DgQb"></td><td class="cell-KwK;"><time>@27/11/2021</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-default">Cisco</span></td><td class="cell-Az~n"></td></tr><tr id="f781efe8-328d-473f-b935-df8723db017c"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/CCNAv7%20Switching,%20Routing,%20and%20Wireless%20Essentials%20f781efe8328d473fb935df8723db017c.html"><span class="icon">🌟</span>CCNAv7: Switching, Routing, and Wireless Essentials</a></td><td class="cell-DgQb"></td><td class="cell-KwK;"><time>@16/01/2022</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-default">Cisco</span></td><td class="cell-Az~n"></td></tr><tr id="ae692f87-5a3c-481d-a18b-22ec82cea9e0"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/Cybersecurity%20Essentials%20I4G%20ae692f875a3c481da18b22ec82cea9e0.html"><span class="icon">🌟</span>Cybersecurity Essentials I4G</a></td><td class="cell-DgQb"></td><td class="cell-KwK;"><time>@15/05/2023</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-orange">Cisco-I4G</span></td><td class="cell-Az~n"></td></tr><tr id="e76c963d-d309-459c-8243-51bebc1e4e66"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/Introduction%20to%20Cybersecurity%20I4G%20e76c963dd309459c824351bebc1e4e66.html"><span class="icon">🌟</span>Introduction to Cybersecurity I4G</a></td><td class="cell-DgQb"></td><td class="cell-KwK;"><time>@15/05/2023</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-orange">Cisco-I4G</span></td><td class="cell-Az~n"></td></tr><tr id="f89d9e80-1073-4a2f-a631-7cf1c4266b58"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/Congratulation%20letter%20from%20CISCO%20CCNAv7-%20Introduct%20f89d9e8010734a2fa6317cf1c4266b58.html"><span class="icon">🌟</span>Congratulation letter from CISCO: CCNAv7- Introduction to Networks</a></td><td class="cell-DgQb"></td><td class="cell-KwK;"><time>@27/11/2021</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-default">Cisco</span></td><td class="cell-Az~n"></td></tr><tr id="147cd498-0887-4b9b-b0bc-3d30dc57d25a"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/Endpoint%20Security%20I4G%20147cd49808874b9bb0bc3d30dc57d25a.html"><span class="icon">🌟</span>Endpoint Security I4G</a></td><td class="cell-DgQb"></td><td class="cell-KwK;"><time>@10/08/2023</time></td><td class="cell-hIlh"><span class="selected-value select-value-color-orange">Cisco-I4G</span></td><td class="cell-Az~n"></td></tr><tr id="50052810-4ecd-47a9-996e-419d76f70872"><td class="cell-title"><a href="Parfait%20TOLEFO%204f0af603d2744c68b4b390ea6bfa1dab/Selected%20Certificate%20(1)%201e7dd3030da349329c9a7459447ad8f6/ECOWAS%20CTF%202023%20500528104ecd47a9996e419d76f70872.html"><span class="icon">🌟</span>ECOWAS CTF 2023</a></td><td class="cell-DgQb"></td><td class="cell-KwK;"><time>@18/10/2023</time></td><td class="cell-hIlh"></td><td class="cell-Az~n"></td></tr></tbody></table><br/><br/></div><hr id="3969810b-9538-4ee5-9760-4c92e4e6ae1b"/><hr id="cdf58800-3581-4bd8-be38-845f9e2462d5"/><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="b3f2c37c-34a1-40d7-96db-bca0b7b7a077"><div style="font-size:1.5em"><span class="icon">🔐</span></div><div style="width:100%">Copyright © Parfait TOLEFO </div></figure><p id="54cfe4ea-2c43-41ef-925b-833bf6b3a4fb" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
